@@ -328,7 +328,7 @@ body {
 .inner-second-title::before {
 	content: '';
 	position: absolute;
-	width: 126px;
+	width: 70px;
 	height: 5px;
 	right: 0;
 	bottom: 0;
@@ -416,3 +416,212 @@ body {
 	font-size: var(--small-font-size);
 }
 /* end About section   */
+
+/*  Scills Section   */
+
+.Scills .inner-content {
+	padding-bottom: 50px;
+}
+
+.skills-description {
+	max-width: 700px;
+	width: 100%;
+	margin: 50px auto;
+}
+.skills-description h3 {
+	font-size: 30px;
+	margin-bottom: 5px;
+	text-align: center;
+}
+.skills-description p {
+	font-size: var(--normal-font-size);
+	text-align: center;
+}
+
+.skills-info {
+	max-width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 21px;
+	margin-bottom: 20px;
+}
+
+.education {
+	min-width: 320px;
+	width: 46%;
+}
+
+.education .label {
+	color: #fff;
+	font-weight: 400;
+	padding: 5px 15px;
+	border-radius: 5px;
+	background: var(--second-color);
+	display: inline-block;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+}
+
+.education-list .item {
+	padding: 20px;
+	margin-top: 15px;
+	border-radius: 6px;
+	background: var(--card-bg-color);
+	box-shadow: var(--box-shadow);
+	border-bottom: 3px solid var(--second-color);
+	transition: 0.3s linear;
+	display: block;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-ms-border-radius: 6px;
+	-o-border-radius: 6px;
+	-webkit-transition: 0.3s linear;
+	-moz-transition: 0.3s linear;
+	-ms-transition: 0.3s linear;
+	-o-transition: 0.3s linear;
+}
+
+.education-list .year_ {
+	margin-bottom: 10px;
+	font-size: var(--small-font-size);
+	color: var(--first-color);
+	font-weight: 500;
+	display: block;
+}
+
+.education-list .p {
+	color: var(--third-color);
+}
+
+.education .bar {
+	background: var(--card-bg-color);
+	box-shadow: var(--box-shadow);
+	margin-top: 15px;
+	padding: 18px;
+	border-radius: 6px;
+	transition: 0.3s linear;
+
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-ms-border-radius: 6px;
+	-o-border-radius: 6px;
+	-webkit-transition: 0.3s linear;
+	-moz-transition: 0.3s linear;
+	-ms-transition: 0.3s linear;
+	-o-transition: 0.3s linear;
+}
+
+.education .info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+	font-size: var(--small-font-size);
+}
+
+.info span {
+	font-weight: 500;
+}
+
+.bar .line {
+	position: relative;
+	width: 100%;
+	height: 7px;
+	border-radius: 2px;
+	background: #d0d8ed;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-ms-border-radius: 2px;
+	-o-border-radius: 2px;
+}
+
+.bar .line::before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: var(--second-color);
+}
+
+.bar .html::before {
+	width: 65%;
+}
+.bar .css::before {
+	width: 45%;
+}
+.bar .javascript::before {
+	width: 50%;
+}
+.bar .react::before {
+	width: 55%;
+}
+.bar .redux::before {
+	width: 35%;
+}
+.bar .git::before {
+	width: 40%;
+}
+.bar .typescript::before {
+	width: 20%;
+}
+
+.work-exp {
+	width: 100%;
+	max-width: 100%;
+}
+
+.work-exp .work-exp-title {
+	font-size: 18px;
+	margin-bottom: 50px;
+}
+
+.work-exp .experiens-card {
+	min-width: 320px;
+	width: 32px;
+}
+
+.uper h3 {
+	font-size: 22px;
+	font-weight: 700;
+}
+
+.uper h5 {
+	font-style: italic;
+	font-weight: 500;
+	font-size: var(--small-font-size);
+}
+
+.uper span {
+	color: var(--third-color);
+}
+
+.experiens-card .hr {
+	width: 100%;
+	height: 2px;
+	margin: 10px 0 22px;
+	background: var(--liner-color);
+}
+
+.experiens-card p {
+	font-size: 16px;
+	margin-top: 22px;
+	font-weight: 500;
+}
+
+.experiens-card:hover,
+.education-list .item:hover,
+.bar:hover {
+	transform: scale(1.03);
+	cursor: pointer;
+	-webkit-transform: scale(1.03);
+	transition: 0.3s linear;
+	-moz-transform: scale(1.03);
+	-ms-transform: scale(1.03);
+	-o-transform: scale(1.03);
+}
+/*  Scills Section   */
