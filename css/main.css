@@ -193,7 +193,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	gap: 60px;
+	gap: 10px;
 }
 
 .media-icons {
@@ -660,6 +660,7 @@ body {
 .services-list .services-container .service-card {
 	height: 350px;
 }
+
 .service-card > i {
 	color: var(--second-color);
 	font-size: 48px;
