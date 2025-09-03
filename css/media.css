@@ -54,6 +54,10 @@
 	.fa-brands {
 		padding-right: 20px;
 	}
+
+	.header {
+		background: rgb(66, 240, 205);
+	}
 }
 
 /* ========== Адаптація для телефонів (max-width: 768px) ========== */
@@ -111,6 +115,11 @@
 	.experiens-card {
 		width: 100%;
 	}
+
+	.nav-ul-menu {
+		display: flex;
+		gap: 10px !important;
+	}
 }
 
 /* ========== Дуже малі телефони (max-width: 480px) ========== */
@@ -148,5 +157,19 @@
 
 	.service-card > i {
 		font-size: 36px;
+	}
+
+	.nav-ul-menu {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.media-icons {
+		display: flex;
+		flex-direction: column;
+		margin-top: 20px;
+	}
+	.logo {
+		margin-right: 20px;
 	}
 }
