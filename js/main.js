@@ -19,3 +19,33 @@ modalCloseBtn.forEach((button) => {
 		});
 	});
 });
+
+//PORTFOLIO SECTION MODAL
+
+const portfolioModals = document.querySelectorAll('.portfolio-modal');
+const imgCards = document.querySelectorAll('.img-card');
+const portfolioCloseBtns = document.querySelectorAll('.portfolio-clise-btn'); // виправлена назва класу
+
+// Функція відкриття модалки
+const openPortfolioModal = (index) => {
+	portfolioModals[index].classList.add('active');
+};
+
+// Функція закриття всіх модалок
+const closePortfolioModals = () => {
+	portfolioModals.forEach((modal) => {
+		modal.classList.remove('active');
+	});
+};
+
+// Відкриття по кліку на картку
+imgCards.forEach((card, index) => {
+	card.addEventListener('click', () => {
+		openPortfolioModal(index);
+	});
+});
+
+// Закриття по кліку на кнопку закриття
+portfolioCloseBtns.forEach((btn) => {
+	btn.addEventListener('click', closePortfolioModals);
+});
