@@ -636,6 +636,12 @@ body {
 	margin-bottom: 50px;
 }
 
+.serwices-wrapper h3 {
+	text-align: center;
+	margin-bottom: 30px;
+	font-size: 30px;
+}
+
 .services-list {
 	display: flex;
 	width: 100%;

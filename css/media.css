@@ -194,4 +194,13 @@
 	.logo {
 		margin-right: 20px;
 	}
+
+  .get-in-touch .contact-card {
+    display: flex;
+    flex-direction: column;
+	}
+
+	.contact-card .title {
+		margin-bottom: 50px;
+	}
 }
