@@ -58,6 +58,23 @@
 	.header {
 		background: rgb(66, 240, 205);
 	}
+
+	.client-swipper .swiper-slide {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	margin: 5px;
+	margin-left: 0;
+}
+
+.clent-details p {
+	font-size: 16px;
+	color: var(--third-color);
+	margin-left: 15px;
+	margin-bottom: 20px;
+	border-bottom: 2px solid var(--liner-color);
 }
 
 /* ========== Адаптація для телефонів (max-width: 768px) ========== */
