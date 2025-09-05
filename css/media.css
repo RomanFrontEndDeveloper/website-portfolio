@@ -67,6 +67,7 @@
 	gap: 5px;
 	margin: 5px;
 	margin-left: 0;
+	}
 }
 
 .clent-details p {
@@ -84,6 +85,16 @@
 
 /* ========== Адаптація для телефонів (max-width: 768px) ========== */
 @media (max-width: 768px) {
+
+  .contact-wrapper {
+	  display: flex;
+  	justify-content: space-between;
+  	width: 100%;
+  	gap: 10px;
+  	padding-right: 10px;
+  	padding-left: 10px;
+  }
+
 	.header-wrapper {
 		padding: 10px 0;
 	}
@@ -142,10 +153,34 @@
 		display: flex;
 		gap: 10px !important;
 	}
+
+  .swiper-button-next, .swiper-button-prev {
+    margin-top: 140px;
+
+
+
 }
 
 /* ========== Дуже малі телефони (max-width: 480px) ========== */
 @media (max-width: 480px) {
+
+  .contact-wrapper {
+	  display: flex;
+  	justify-content: space-around;
+  	width: 100%;
+  	gap: 10px;
+		margin: 0 auto;
+  	flex-direction: column;
+  }
+
+
+  .second-row {
+		flex-direction: column;
+	}
+  .second-row input {
+   	width: 100%;
+  }
+
 	body {
 		font-size: 14px;
 	}

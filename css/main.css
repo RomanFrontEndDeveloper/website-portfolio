@@ -1082,5 +1082,116 @@ body {
 	font-size: 45px;
 	color: var(--second-color);
 }
-
 /* END OUR CLIENTS section */
+
+/* --------Contacts section------------ */
+
+.contact-wrapper {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	gap: 30px;
+	padding-right: 50px;
+	padding-left: 50px;
+}
+
+.contact-left {
+	max-width: 418px;
+	width: 100%;
+}
+
+.contact-left h2 {
+	font-size: 32px;
+	font-weight: 800;
+	margin-bottom: 40px;
+}
+
+.contact-list li {
+	margin-bottom: 40px;
+}
+
+.contact-list h3 {
+	font-size: 22px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.contact-list h3 i {
+	color: var(--second-color);
+	font-size: 30px;
+	margin-right: 10px;
+}
+
+.contact-list span {
+	color: var(--third-color);
+	margin-left: 10px;
+}
+
+.contact-list a {
+	color: var(--third-color);
+}
+
+.contacr-right {
+	max-width: 536px;
+	width: 100%;
+}
+
+.contacr-right p {
+	font-size: 26px;
+	margin-bottom: 30px;
+	color: var(--third-color);
+}
+
+.contacr-right p span {
+	display: block;
+	font-weight: 700;
+	color: var(--first-color);
+}
+
+.contact-form input,
+.contact-form textarea {
+	border: 2px solid transparent;
+	border: none;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	outline: none;
+	color: var(--first-color);
+	background: var(--bg-transparent-color-02);
+	padding: 15px 40px 40px 20px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	font-size: var(--normal-font-size);
+	transition: 0.3s linear;
+	-webkit-transition: 0.3s linear;
+	-moz-transition: 0.3s linear;
+	-ms-transition: 0.3s linear;
+	-o-transition: 0.3s linear;
+}
+
+.contact-form textarea {
+	width: 100%;
+	resize: none;
+}
+
+.first-row input {
+	width: 100%;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form input:active,
+.contact-form textarea:active {
+	border: 2px solid rgb(176, 23, 181);
+}
+
+.second-row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.second-row input {
+	width: 48%;
+}
+/*-------------- END Contacts section-------------- */
