@@ -1195,3 +1195,74 @@ body {
 	width: 48%;
 }
 /*-------------- END Contacts section-------------- */
+
+/*-------------- FOOTER section-------------- */
+
+.footer {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	padding: 60px 0 20px;
+	background: var(--second-color);
+	color: #fff;
+}
+
+.footer-wrapper {
+	display: flex;
+	justify-content: space-around;
+}
+
+.about-group h2 {
+	font-size: 35px;
+	font-weight: 600;
+	background: linear-gradient(to top, #fff 0%, #00f 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.about-group p {
+	font-size: var(--normal-font-size);
+	font-weight: 300;
+	margin-bottom: 30px;
+}
+
+.info-group,
+.follov-group {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.info-group ul,
+.follov-group ul {
+	display: flex;
+	gap: 30px;
+}
+
+.info-group h3,
+.follov-group h3 {
+	font-size: 18px;
+	font-weight: 500;
+	margin-bottom: 30px;
+}
+
+info-group a {
+	text-transform: uppercase;
+	padding: 10px;
+}
+
+.follov-group a {
+	font-size: 24px;
+	padding: 10px;
+}
+
+.footer-copiright {
+	font-size: var(--normal-font-size);
+	font-weight: 300;
+	margin-top: 50px;
+	text-align: center;
+	margin-bottom: 30px;
+	padding: 0 15px;
+}
+
+/*-------------- END FOOTER section-------------- */
