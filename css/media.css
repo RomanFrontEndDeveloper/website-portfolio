@@ -1,5 +1,20 @@
+@media (max-width: 1040px) {
+	.contact-card h2 {
+		font-size: 42px;
+	}
+	.get-in-touch .contact-card {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+}
+
 /* ========== Адаптація для планшетів (max-width: 991px) ========== */
 @media (max-width: 991px) {
+	.get-in-touch-link {
+		margin: 5px;
+	}
+
 	.footer-wrapper {
 		display: flex;
 		flex-direction: column;
@@ -8,6 +23,7 @@
 	.about-group {
 		margin: 0 auto;
 		padding-bottom: 50px;
+		text-align: center;
 	}
 
 	.info-group {
@@ -69,10 +85,6 @@
 		padding-right: 20px;
 	}
 
-	.header {
-		background: rgb(66, 240, 205);
-	}
-
 	.client-swipper .swiper-slide {
 		display: flex;
 		flex-direction: column;
@@ -99,6 +111,49 @@
 
 /* ========== Адаптація для телефонів (max-width: 768px) ========== */
 @media (max-width: 768px) {
+	.nav-menu-btn {
+		display: block;
+		position: relative;
+		z-index: 5;
+		width: 40px;
+		height: 40px;
+		background: url('../img/burger.svg') no-repeat center / contain;
+		cursor: pointer;
+		transition: 0.3s linear;
+		-webkit-transition: 0.3s linear;
+		-moz-transition: 0.3s linear;
+		-ms-transition: 0.3s linear;
+		-o-transition: 0.3s linear;
+	}
+
+	.nav-menu-btn.close {
+		background: url('../img/close.svg') no-repeat center / contain;
+	}
+
+	.nav {
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		align-items: center;
+		background: var(--bg-transparent-color-01);
+		visibility: hidden;
+		opacity: 0;
+		z-index: -1;
+		transition: 0.3 linear;
+		-webkit-transition: 0.3 linear;
+		-moz-transition: 0.3 linear;
+		-ms-transition: 0.3 linear;
+		-o-transition: 0.3 linear;
+	}
+
+	.nav.active {
+		z-index: 3;
+		opacity: 1;
+		visibility: visible;
+	}
+
 	.contact-wrapper {
 		display: flex;
 		justify-content: space-between;
@@ -112,16 +167,41 @@
 		padding: 10px 0;
 	}
 
-	.nav {
-		display: none; /* Сховати меню, можна замінити на бургер */
+	.nav-ul-menu {
+		position: relative;
+		flex-direction: column;
+		max-width: 600px;
+		width: 100%;
+		margin: 20px;
+		padding: 40px;
+		background: var(--modal-bg-color);
+		border-radius: 10px;
+		transform: translateY(-50%);
+		transition: 0.3 linear;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		-ms-border-radius: 10px;
+		-o-border-radius: 10px;
+		-webkit-transform: translateY(-50%);
+		-moz-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		-o-transform: translateY(-50%);
+		-webkit-transition: 0.3 linear;
+		-moz-transition: 0.3 linear;
+		-ms-transition: 0.3 linear;
+		-o-transition: 0.3 linear;
 	}
 
-	.nav-menu-btn {
-		display: block;
-		width: 35px;
-		height: 35px;
-		background: url('../img/burger.svg') no-repeat center / contain;
-		cursor: pointer;
+	.nav-ul-menu li {
+		text-align: center;
+	}
+
+	.nav-ul-menu.active {
+		transform: translateY(0%);
+		-webkit-transform: translateY(0%);
+		-moz-transform: translateY(0%);
+		-ms-transform: translateY(0%);
+		-o-transform: translateY(0%);
 	}
 
 	.home-info h1 {
@@ -162,11 +242,6 @@
 		width: 100%;
 	}
 
-	.nav-ul-menu {
-		display: flex;
-		gap: 10px !important;
-	}
-
 	.swiper-button-next,
 	.swiper-button-prev {
 		margin-top: 140px;
@@ -175,6 +250,10 @@
 
 /* ========== Дуже малі телефони (max-width: 480px) ========== */
 @media (max-width: 480px) {
+	.contact-card .title {
+		margin-bottom: 5px;
+	}
+
 	.contact-wrapper {
 		display: flex;
 		justify-content: space-around;
@@ -187,7 +266,12 @@
 	.info-group ul,
 	.follov-group ul {
 		display: flex;
-		gap: 5px;
+		gap: 25px;
+		flex-wrap: wrap;
+		margin: 10px;
+		justify-content: center;
+		margin-right: 10px;
+		margin-left: 10px;
 	}
 
 	.second-row {
