@@ -1,3 +1,15 @@
+//////////dark theme
+
+const body = document.body;
+const menuBtn = document.getElementById('menuBtn1');
+
+menuBtn.addEventListener('click', () => {
+	// перемикаємо dark-theme на body
+	body.classList.toggle('dark-theme');
+	menuBtn.classList.toggle('dark-theme');
+	// перемикаємо стан кнопки
+});
+
 //////Header effect scroll  /////////////////////////
 
 const header = document.querySelector('.header');
@@ -75,14 +87,14 @@ const navMenu = document.querySelector('.nav-ul-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 
 navBtn.addEventListener('click', function () {
-	navBtn.classList.toggle('close');
+	navBtn.classList.toggle('close1');
 	navBar.classList.toggle('active');
 	navMenu.classList.toggle('active');
 });
 
 navLinks.forEach(function (Link) {
 	Link.addEventListener('click', function () {
-		navBtn.classList.remove('close');
+		navBtn.classList.remove('close1');
 		navBar.classList.remove('active');
 		navMenu.classList.remove('active');
 	});
@@ -132,4 +144,40 @@ var swiper = new Swiper('.client-swipper', {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
 	},
+});
+
+////////---ScrollReveal
+
+ScrollReveal({
+	reset: true,
+	distance: '80px',
+	duration: 2500,
+	delay: 100,
+});
+
+ScrollReveal().reveal('.home-info h1, .about-img', {
+	delay: 500,
+	origin: 'left',
+});
+ScrollReveal().reveal('.home-img, .description, .inner-info-link', {
+	delay: 600,
+	origin: 'right',
+});
+ScrollReveal().reveal('.media-icons a, .list-item', {
+	delay: 700,
+	origin: 'top',
+	interval: 200,
+});
+ScrollReveal().reveal('.home-info p, .home-info-link', {
+	delay: 800,
+	origin: 'left',
+});
+ScrollReveal().reveal('.home-info h3', {
+	delay: 1200,
+	origin: 'right',
+});
+
+ScrollReveal().reveal('.inner-title, .inner-second-title', {
+	opaciti: 0,
+	delay: 300,
 });

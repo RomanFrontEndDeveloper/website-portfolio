@@ -34,7 +34,7 @@
 	--scroll-thumb-hover-color: #454f6b;
 }
 
-.dark-theme {
+body.dark-theme {
 	/*=======Main theme colors=======*/
 	--first-color: #fff;
 	--second-color: #6a59d1;
@@ -61,7 +61,7 @@
 	background: url(../img/burger-white.svg) no-repeat center;
 }
 
-.dark-theme .nav-menu-btn.close {
+.dark-theme .close1 {
 	background: url(../img/close-white.svg) no-repeat center;
 }
 
@@ -118,6 +118,36 @@ body {
 	width: 100%;
 	margin: 0 auto;
 	padding: 0 15px;
+}
+
+/* темна тема */
+
+.nav-menu-btn.dark-theme {
+	color: white !important;
+	background: #000000 !important;
+}
+
+.nav-menu-btn1 {
+	position: fixed;
+	right: 20px;
+	bottom: 100px;
+	width: 45px;
+	height: 45px;
+	color: var(--first-color);
+	border-radius: 3px;
+	background: var(--second-color);
+	cursor: pointer;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	z-index: 15;
+	box-shadow: var(--box-shadow);
+	transition: 0.3 line-height;
+	-webkit-transition: 0.3 line-height;
+	-moz-transition: 0.3 line-height;
+	-ms-transition: 0.3 line-height;
+	-o-transition: 0.3 line-height;
 }
 
 /*  skroll to top button  */
@@ -236,9 +266,9 @@ main {
 	color: var(--second-color);
 }
 
-.nav-menu-btn {
+/* .nav-menu-btn {
 	display: none;
-}
+} */
 
 /* end header */
 
