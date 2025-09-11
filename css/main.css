@@ -546,8 +546,8 @@ main {
 }
 
 .education {
-	min-width: 320px;
-	width: 46%;
+	min-width: 290px;
+	width: 40%;
 }
 
 .education .label {
@@ -676,16 +676,21 @@ main {
 .work-exp {
 	width: 100%;
 	max-width: 100%;
+	margin: 0 20px 0 20px;
 }
 
 .work-exp .work-exp-title {
-	font-size: 18px;
 	margin-bottom: 50px;
+	text-align: center;
+	margin-bottom: 30px;
+	font-size: 30px;
 }
 
 .work-exp .experiens-card {
-	min-width: 320px;
+	min-width: 280px;
 	width: 32px;
+	margin-right: 10px;
+	margin-left: 10px;
 }
 
 .uper h3 {
@@ -819,16 +824,16 @@ main {
 	background: var(--bg-transparent-color);
 	visibility: hidden;
 	opacity: 0;
-	transition: 0.3s linear;
-	-webkit-transition: 0.3s linear;
-	-moz-transition: 0.3s linear;
-	-ms-transition: 0.3s linear;
-	-o-transition: 0.3s linear;
 }
 
 .servise-modal.active {
 	visibility: visible;
 	opacity: 1;
+	transition: 0.3s linear;
+	-webkit-transition: 0.3s linear;
+	-moz-transition: 0.3s linear;
+	-ms-transition: 0.3s linear;
+	-o-transition: 0.3s linear;
 }
 
 .servise-modal-body {

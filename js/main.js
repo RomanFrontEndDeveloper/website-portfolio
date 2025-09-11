@@ -55,7 +55,86 @@ scrollToTop.addEventListener('click', function () {
 	document.documentElement.scrollTop = 0;
 });
 
-//////Services section  /////////////////////////
+////////-initial scrollreveal
+
+const revealConfigurations = [
+	{
+		selector: '.inner-title, .inner-second-title',
+		config: { opacity: 0, delay: 500 },
+	},
+	{
+		selector: '.home-info h1, .about-img',
+		config: { delay: 500, origin: 'left' },
+	},
+	{
+		selector: '.home-img, .description',
+		config: { delay: 600, origin: 'right' },
+	},
+	{
+		selector: '.skills-description, .work-exp-title, .services-description',
+		config: { delay: 600, origin: 'top' },
+	},
+	{
+		selector: '.media-icons a, .list-item, .inner-info-link',
+		config: { delay: 700, origin: 'bu ttom', interval: 300 },
+	},
+	{
+		selector: '.education',
+		config: { origin: 'top', delay: 600, interval: 300 },
+	},
+	{
+		selector: '.work-exp, .experience-card, .services-container',
+		config: { origin: 'top', delay: 600, interval: 300 },
+	},
+	{
+		selector: '.home-info h3, .home-info p, .home-info-link',
+		config: { delay: 600, origin: 'left' },
+	},
+];
+
+function initializeScrollReveal() {
+	window.sr = ScrollReveal({
+		reset: true,
+		distance: '60px',
+		duration: 2500,
+		delay: 100,
+	});
+
+	revealConfigurations.forEach(({ selector, config }) => {
+		sr.reveal(selector, config);
+	});
+}
+
+initializeScrollReveal();
+
+// Функція відключення ScrollReveal
+
+function disableScrollReveal() {
+	sr.clean(); ///очистка всіх елементів від анімацій
+	document.documentElement.style.overflowY = 'hidden';
+	document.body.style.overflowY = 'hidden';
+
+	revealConfigurations.forEach(({ selector }) => {
+		document.querySelectorAll(selector).forEach((el) => {
+			el.style.transform = '';
+			el.style.opacity = '';
+			el.style.transition = '';
+			el.style.visibility = '';
+		});
+	});
+
+	console.log('ScrollReveal вимкнено');
+}
+
+// Функция повторной инициализации ScrollReveal function enableScrollReveal() {
+function enableScrollReveal() {
+	document.documentElement.style.overflow = '';
+	document.body.style.overflow = '';
+	initializeScrollReveal();
+	console.log(jkjkjh);
+}
+
+//////Services section -Modal /////////////////////////
 
 const servicesModal = document.querySelectorAll('.servise-modal');
 const learnMoreBtn = document.querySelectorAll('.learn-more-btn');
@@ -63,6 +142,7 @@ const modalCloseBtn = document.querySelectorAll('.modal-close-btn');
 
 const modal = function (modalClick) {
 	servicesModal[modalClick].classList.add('active');
+	disableScrollReveal();
 };
 
 learnMoreBtn.forEach((button, i) => {
@@ -76,6 +156,7 @@ modalCloseBtn.forEach((button) => {
 		servicesModal.forEach((modal) => {
 			modal.classList.remove('active');
 		});
+		enableScrollReveal();
 	});
 });
 
@@ -144,40 +225,4 @@ var swiper = new Swiper('.client-swipper', {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
 	},
-});
-
-////////---ScrollReveal
-
-ScrollReveal({
-	reset: true,
-	distance: '80px',
-	duration: 2500,
-	delay: 100,
-});
-
-ScrollReveal().reveal('.home-info h1, .about-img', {
-	delay: 500,
-	origin: 'left',
-});
-ScrollReveal().reveal('.home-img, .description, .inner-info-link', {
-	delay: 600,
-	origin: 'right',
-});
-ScrollReveal().reveal('.media-icons a, .list-item', {
-	delay: 700,
-	origin: 'top',
-	interval: 200,
-});
-ScrollReveal().reveal('.home-info p, .home-info-link', {
-	delay: 800,
-	origin: 'left',
-});
-ScrollReveal().reveal('.home-info h3', {
-	delay: 1200,
-	origin: 'right',
-});
-
-ScrollReveal().reveal('.inner-title, .inner-second-title', {
-	opaciti: 0,
-	delay: 300,
 });
