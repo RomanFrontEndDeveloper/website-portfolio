@@ -122,32 +122,41 @@ body {
 
 /* темна тема */
 
-.nav-menu-btn.dark-theme {
-	color: white !important;
-	background: #000000 !important;
-}
-
-.nav-menu-btn1 {
+.them-btn {
 	position: fixed;
 	right: 20px;
-	bottom: 100px;
+	bottom: 80px;
 	width: 45px;
 	height: 45px;
 	color: var(--first-color);
 	border-radius: 3px;
 	background: var(--second-color);
+	backdrop-filter: blur(20px);
+	box-shadow: var(--box-shadow);
 	cursor: pointer;
+	font-size: 20px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	-ms-border-radius: 3px;
 	-o-border-radius: 3px;
-	z-index: 15;
+	z-index: 11;
 	box-shadow: var(--box-shadow);
 	transition: 0.3 line-height;
 	-webkit-transition: 0.3 line-height;
 	-moz-transition: 0.3 line-height;
 	-ms-transition: 0.3 line-height;
 	-o-transition: 0.3 line-height;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.them-btn .fa-sun {
+	display: none;
+}
+
+.them-btn .fa-moon {
+	color: var(--modal-bg-color);
 }
 
 /*  skroll to top button  */
@@ -183,6 +192,7 @@ body {
 	opacity: 1;
 	visibility: visible;
 	right: 20px;
+	bottom: 20px;
 }
 
 .scrollToTop.flex-center {
@@ -191,6 +201,21 @@ body {
 
 main {
 	flex: 1;
+}
+
+/* ===== Scroll bar ===== */
+::-webkit-scrollbar {
+	width: 10px;
+	background: var(--scroll-bar-color);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--scroll-thumb-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	border-radius: 20px;
+	background: var(--scroll-thumb-hover-color);
 }
 
 /* header */

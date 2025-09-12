@@ -1,13 +1,86 @@
 //////////dark theme
+// 1-а спроба переключення теми:
 
-const body = document.body;
-const menuBtn = document.getElementById('menuBtn1');
+// const body = document.body;
+// const menuBtn = document.getElementById('menuBtn1');
 
-menuBtn.addEventListener('click', () => {
-	// перемикаємо dark-theme на body
-	body.classList.toggle('dark-theme');
-	menuBtn.classList.toggle('dark-theme');
-	// перемикаємо стан кнопки
+// menuBtn.addEventListener('click', () => {
+// 	// перемикаємо dark-theme на body
+// 	body.classList.toggle('dark-theme');
+// 	menuBtn.classList.toggle('dark-theme');
+// 	// перемикаємо стан кнопки
+// });
+//----------------------------------------------------------------------------------------------
+
+// 2-а спроба переключення теми:
+// const themeBtn = document.querySelector('.them-btn');
+
+// //функція для отримання поточної теми
+
+// const fetCurrentTheme = () =>
+// 	document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+
+// /// фенкція для поточного значка
+
+// const getCurentIcon = () =>
+// 	themeBtn.classList.contains('fa-sun') ? 'fa-sun' : 'fa-moon';
+
+// // переключ теми
+
+// themeBtn.addEventListener('click', function () {
+// 	document.body.classList.toggle('dark-theme');
+// 	themeBtn.classList.toggle('fa-sun');
+// });
+//--------------------------------------------------------------
+// 3-а спроба переключення теми:
+document.addEventListener('DOMContentLoaded', () => {
+	const themeBtn = document.querySelector('.them-btn');
+	if (!themeBtn) return;
+
+	const moonIcon = themeBtn.querySelector('.fa-moon');
+	const sunIcon = themeBtn.querySelector('.fa-sun');
+	if (!moonIcon || !sunIcon) return;
+
+	function updateIcons() {
+		const isDark = document.body.classList.contains('dark-theme');
+		// якщо темна тема — показуємо сонце, ховаємо місяць
+		moonIcon.style.display = isDark ? 'none' : 'inline-block';
+		sunIcon.style.display = isDark ? 'inline-block' : 'none';
+	}
+
+	// ---- Функція для збереження теми ----
+	function saveTheme() {
+		const theme = document.body.classList.contains('dark-theme')
+			? 'dark'
+			: 'light';
+		localStorage.setItem('theme', theme);
+	}
+
+	themeBtn.addEventListener('click', () => {
+		document.body.classList.toggle('dark-theme');
+		updateIcons();
+		saveTheme();
+	});
+
+	// Accessibility: дозволити переключати клавішами Enter / Space
+	themeBtn.tabIndex = 0;
+	themeBtn.addEventListener('keydown', (e) => {
+		if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault();
+			themeBtn.click();
+		}
+	});
+
+	// ---- При завантаженні сторінки підтягуємо тему з localStorage ----
+	const savedTheme = localStorage.getItem('theme');
+	if (savedTheme === 'dark') {
+		document.body.classList.add('dark-theme');
+	} else {
+		document.body.classList.remove('dark-theme');
+	}
+
+	// Ініціалізація стану іконок при завантаженні сторінки
+	updateIcons();
 });
 
 //////Header effect scroll  /////////////////////////
@@ -63,7 +136,7 @@ const revealConfigurations = [
 		config: { opacity: 0, delay: 500 },
 	},
 	{
-		selector: '.home-info h1, .about-img',
+		selector: '.home-info h1, .about-img, .contact-card .title',
 		config: { delay: 500, origin: 'left' },
 	},
 	{
@@ -71,7 +144,8 @@ const revealConfigurations = [
 		config: { delay: 600, origin: 'right' },
 	},
 	{
-		selector: '.skills-description, .work-exp-title, .services-description',
+		selector:
+			'.skills-description, .work-exp-title, .services-description, .contacr-right p, .contact-left h2',
 		config: { delay: 600, origin: 'top' },
 	},
 	{
@@ -83,7 +157,8 @@ const revealConfigurations = [
 		config: { origin: 'top', delay: 600, interval: 300 },
 	},
 	{
-		selector: '.work-exp, .experience-card, .services-container',
+		selector:
+			'.work-exp, .experience-card, .services-container, .contact-list li, .portfolio-img-card, .first-row, .second-row, .third-row',
 		config: { origin: 'top', delay: 600, interval: 300 },
 	},
 	{
@@ -188,11 +263,12 @@ const imgCards = document.querySelectorAll('.img-card');
 const portfolioCloseBtns = document.querySelectorAll('.portfolio-clise-btn'); // виправлена назва класу
 
 // Функція відкриття модалки
-const openPortfolioModal = (index) => {
-	portfolioModals[index].classList.add('active');
+const portfolioModal = function (modalClick) {
+	portfolioModals[modalClick].classList.add('active');
+	disableScrollReveal();
 };
 
-// Функція закриття всіх модалок
+//Функція закриття всіх модалок
 const closePortfolioModals = () => {
 	portfolioModals.forEach((modal) => {
 		modal.classList.remove('active');
@@ -200,15 +276,20 @@ const closePortfolioModals = () => {
 };
 
 // Відкриття по кліку на картку
-imgCards.forEach((card, index) => {
-	card.addEventListener('click', () => {
-		openPortfolioModal(index);
+imgCards.forEach((button, i) => {
+	button.addEventListener('click', () => {
+		portfolioModal(i);
 	});
 });
 
 // Закриття по кліку на кнопку закриття
-portfolioCloseBtns.forEach((btn) => {
-	btn.addEventListener('click', closePortfolioModals);
+portfolioCloseBtns.forEach((button) => {
+	button.addEventListener('click', () => {
+		portfolioModals.forEach((modelViev) => {
+			modelViev.classList.remove('active');
+		});
+		enableScrollReveal();
+	});
 });
 
 /////////// OUR CLIENTS section ///////////////////
